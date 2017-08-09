@@ -5,16 +5,6 @@ $userAge = '34';
 $userEmail = 'pejma2001@mail.ru';
 $userCity = 'Petropavlovsk-Kamchatsky';
 $userAbout = 'Экономист, мечтающий стать веб-разработчиком';
-echo($userName);
-echo PHP_EOL;
-echo($userAge);
-echo PHP_EOL;
-echo($userEmail);
-echo PHP_EOL;
-echo($userCity);
-echo PHP_EOL;
-echo($userAbout);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,23 +18,23 @@ echo($userAbout);
 	<table>
 	  <tr>
 	    <td>Имя</td>
-	    <td><?php echo 'Олисия Медведева'; ?></td>
+	    <td><?php echo($userName); ?></td>
 	  </tr>  
 	   <tr>
 	    <td>Возраст</td>
-	    <td><?php echo '34'; ?></td>
+	    <td><?php echo($userAge); ?></td>
 	  </tr> 
 	  <tr>
 	    <td>Адрес электронной почты</td>
-	    <td><a href="mailto:pejma2001@mail.ru"><?php echo 'pejma2001@mail.ru;' ?></a></td>
+	    <td><a href="mailto:pejma2001@mail.ru"><?php echo($userEmail); ?></a></td>
 	  </tr> 
 	  <tr>
 	    <td>Город</td>
-	    <td><?php echo 'Petropavlovsk-Kamchatsky'; ?></td>
+	    <td><?php echo($userCity); ?></td>
 	  </tr>  
 	   <tr>
 	    <td>О себе</td>
-	    <td><?php echo 'Экономист, мечтающий стать веб-разработчиком'; ?></td>
+	    <td><?php echo($userAbout); ?></td>
 	  </tr> 
 	 
 	</table>
