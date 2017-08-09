@@ -1,5 +1,21 @@
 
+<?php 
+$userName = 'Олисия Медведева';
+$userAge = '34';
+$userEmail = 'pejma2001@mail.ru';
+$userCity = 'Petropavlovsk-Kamchatsky';
+$userAbout = 'Экономист, мечтающий стать веб-разработчиком';
+echo($userName);
+echo PHP_EOL;
+echo($userAge);
+echo PHP_EOL;
+echo($userEmail);
+echo PHP_EOL;
+echo($userCity);
+echo PHP_EOL;
+echo($userAbout);
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
