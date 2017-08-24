@@ -1,0 +1,6 @@
+[
+  {"block": "firstName", "contain": "Olisiya"},
+  {"block": "lastName", "contain": "Medvedeva"},
+  {"block": "address", "contain": "Petropavlovsk-Kamchatsky ul.Elit,1-22"},
+  {"block": "phoneNumber", "contain": "+7 961 961 55 44"}
+]
