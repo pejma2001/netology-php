@@ -20,8 +20,8 @@ $data = json_decode($jsonString,true);
 
       <tr>
 
-        <td> <? echo $datum['block'] ?></td>
-        <td> <? echo $datum['contain'] ?></td>
+        <td> <?php echo $datum['block'] ?></td>
+        <td> <?php echo $datum['contain'] ?></td>
 
       </tr>
         <?php } ?>
