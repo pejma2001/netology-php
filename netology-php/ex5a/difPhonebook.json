@@ -1,0 +1,13 @@
+[
+  {"block": "firstName", "contain": "Olisiya"},
+  {"block": "lastName", "contain": "Medvedeva"},
+  {"block": "address", "contain": {
+              "country": "Thailand",
+              "city": "Phuket"
+  }},
+   {"block": "phoneNumber", "contain": [
+              "12342234",
+              "123123123",
+              "1231123132"
+     ]}
+   ]

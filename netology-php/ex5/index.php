@@ -3,6 +3,7 @@ $jsonString = file_get_contents(__DIR__ .'/phonebook.json');
 $data = json_decode($jsonString,true);
 
 ?>
+
 <!Doctype html>
 <html lang ="ru">
   <head>
