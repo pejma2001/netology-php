@@ -1,15 +1,32 @@
-
+<?php
+error_reporting(E_ALL);
+$allMyFiles = scandir(__DIR__. '/tests');
+?>
 
     <!DOCTYPE HTML>
-    <html>
+    <html lang="en">
+
     <head>
-        <meta charset="utf-8">
-        <title>TEST</title>
+        <meta charset="UTF-8">
+        <title>Тесты</title>
     </head>
-    <a>
-    <a href="test.php"<h1>Тест "Звуки животных"</h1></a>
+    <body>
+    <p>
 
+    <?php foreach($allMyFiles as $id => $file){
+        if ($file == "." || $file == ".."){
+            continue;
+        }
+        ?>
+    <p>
 
+        <a href="test.php?id=<?php echo $id ?>">
+
+       <?php echo $file ?>
+        </a>
+    </p>
+
+<?php } ?>
     </body>
     </html>
 

@@ -1,41 +1,68 @@
 <?php
+error_reporting(E_ALL);
+$allMyFiles = scandir(__DIR__. '/tests');
+$id = $_GET['id'];
+$fileTest = $allMyFiles[$id];
+$data = file_get_contents(__DIR__ ."/tests/$fileTest");
+$jsonString = json_decode($data);
+$count=1;
+$result=0;
 
-$jsonString = file_get_contents(__DIR__ .'/data.json');
-$data = json_decode($jsonString,true);
 
 ?>
 
 <!DOCTYPE HTML>
-<html>
+<html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <title>TEST</title>
+    <meta charset="UTF-8">
+    <title>TESTs</title>
 </head>
 <body>
+<p><a href = "list.php">Перейти к тестам</a></p>
+<h1><?php echo $jsonString[0]->title; ?></h1>
 
-<form action="result.php" method = "post" enctype = "multipart/form-data">
-    <div> <?php foreach ($data as $datum){?>
-        <p><b><?php echo $datum[question1] ?></b></p>
-    <?php }?>
+<form action="" method = "post" enctype = "multipart/form-data">
+    <?php foreach($jsonString as $questions):
+        if (is_array($questions)) : ?>
+        <?php foreach ($questions as $question) :?>
+            <fieldset>
+               <legend><?= $question -> question ?></legend>
 
-    <p><label>1.<input name="answer1" type="radio"  value="a"><?php echo $datum[var_answer1] ?></label><br>
-        <label>2.<input name="answer1" type="radio"  value="b"></label><br>
-        <label>3.<input name="answer1" type="radio"  value="c"></label><br>
-        <label>4.<input name="answer1" type="radio"  value="d"></label><br>
-        <label>5.<input name="answer1" type="radio"  value="e"></label></p>
-</div>
-    <div><?php foreach ($data as $datum){?>
-        <p><b><?php echo $datum[question2] ?></b></p>
+            <p>
+                <input type="radio" id="first" name="<?= $count ?>" value="<?= $question->varAnswer->var1 ?>">
+                <label for="first"><?= $question->varAnswer->var1 ?></label>
+            </p>
+            <p>
+                <input type="radio" id="second" name="<?= $count ?>" value="<?= $question->varAnswer->var2 ?>">
+                <label for="second"><?= $question->varAnswer->var2; ?></label>
+            </p>
+    <p>
+        <input type="radio" id="third" name="<?= $count ?>" value="<?= $question->varAnswer->var3 ?>">
+        <label for="third"><?= $question->varAnswer->var3 ?></label>
+    </p>
+                <p>
+                    <input type="radio" id="forth" name="<?= $count ?>" value="<?= $question->varAnswer->var4 ?>">
+                    <label for="forth"><?= $question->varAnswer->var4; ?></label>
+                </p>
+                <p>
+                    <input type="radio" id="fifth" name="<?= $count ?>" value="<?= $question->varAnswer->var5 ?>">
+                    <label for="fifth"><?= $question->varAnswer->var5 ?></label>
+                </p>
+</fieldset>
+<?php if($_POST[$count] == $question->rightAnswer):
+       $result++;
+   endif;
+        $count++;
 
-    <?php }?>
-    <p><label>1.<input name="answer2" type="radio" value="a"><?php echo $datum[var1] ?></label><br>
-        <label> 2.<input name="answer2" type="radio" value="b"></label><br>
-        <label> 3.<input name="answer2" type="radio" value="c"></label><br>
-        <label> 4.<input name="answer2" type="radio" value="d"></label><br>
-        <label> 5.<input name="answer2" type="radio" value="e"></label></p>
-    </div>
-    <p><button type="submit" value="Отправить">Отправить</p>
+   endforeach ?>
+    <?php endif ?>
+   <?php endforeach ?>
+    <input type="submit" value="Результат">
 </form>
+<?php
+$sum=count($questions);
+echo 'Количество вопросов ' . $sum . '<br>';
+      echo 'Верных ответов ' . $result;
+      ?>
 </body>
 </html>
-
