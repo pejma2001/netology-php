@@ -1,13 +1,14 @@
+
 [
-  {"block": "firstName", "contain": "Olisiya"},
-  {"block": "lastName", "contain": "Medvedeva"},
-  {"block": "address", "contain": {
-              "country": "Thailand",
-              "city": "Phuket"
-  }},
-   {"block": "phoneNumber", "contain": [
-              "12342234",
-              "123123123",
-              "1231123132"
-     ]}
-   ]
+  { "firstName": "Олисия",
+    "secondName": "Медведева",
+    "address": {
+      "city": "Petropavlovsk-Kamchatsky",
+      "street": "Элит",
+      "house": "6" },
+    "phoneNumbers": [
+      "8121231234",
+      "8999999999"
+    ]
+  }
+]
