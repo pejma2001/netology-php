@@ -13,20 +13,10 @@ $allMyFiles = scandir(__DIR__. '/tests');
     <body>
     <p>
 
-    <?php foreach($allMyFiles as $id => $file){
-        if ($file == "." || $file == ".."){
-            continue;
-        }
-        ?>
-    <p>
-
-        <a href="test.php?id=<?php echo $id ?>">
-
-       <?php echo $file ?>
-        </a>
+    <a href="test.php">Тесты</a>
     </p>
 
-<?php } ?>
+
     </body>
     </html>
 
